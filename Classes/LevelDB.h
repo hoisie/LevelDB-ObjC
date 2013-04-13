@@ -14,7 +14,7 @@ typedef BOOL (^KeyValueBlock)(NSString *key, id value);
 
 @property (nonatomic, retain) NSString *path;
 
-+ (LevelDB *)databaseInLibraryWithName:(NSString *)name;
++ (instancetype)databaseInLibraryWithName:(NSString *)name;
 
 - (id) initWithPath:(NSString *)path;
 
