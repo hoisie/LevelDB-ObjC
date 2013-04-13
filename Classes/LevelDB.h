@@ -7,22 +7,13 @@
 
 #import <Foundation/Foundation.h>
 
-#import "leveldb/db.h"
-
-using namespace leveldb;
-
 typedef BOOL (^KeyBlock)(NSString *key);
 typedef BOOL (^KeyValueBlock)(NSString *key, id value);
 
-@interface LevelDB : NSObject {
-    DB *db;
-    ReadOptions readOptions;
-    WriteOptions writeOptions;
-}
+@interface LevelDB : NSObject
 
 @property (nonatomic, retain) NSString *path;
 
-+ (id)libraryPath;
 + (LevelDB *)databaseInLibraryWithName:(NSString *)name;
 
 - (id) initWithPath:(NSString *)path;

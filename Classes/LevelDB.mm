@@ -34,7 +34,12 @@ static id ObjectFromSlice(Slice v) {
     return object;
 }
 
-@implementation LevelDB 
+@implementation LevelDB {
+    DB *db;
+    ReadOptions readOptions;
+    WriteOptions writeOptions;
+}
+
 
 @synthesize path=_path;
 
